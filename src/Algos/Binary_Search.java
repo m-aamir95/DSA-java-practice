@@ -1,3 +1,5 @@
+package Algos;
+
 public class Binary_Search {
 
     private int[] arr;
