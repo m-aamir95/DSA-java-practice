@@ -2,7 +2,7 @@ import Algos.Polymosphism.FalconHeavy;
 import Algos.Polymosphism.FalconNine;
 import Algos.Polymosphism.SpaceShip;
 import Algos.Polymosphism.Starship;
-
+import Algos.Merge_sorted_array.Basic_Test;
 public class Main {
     public static void main(String[] args) {
 
@@ -18,6 +18,11 @@ public class Main {
             System.out.println(ship);
         }
 
+
+
+        Basic_Test test =  new Basic_Test();
+
+        test.run_test_cases();
 
     }
 }
