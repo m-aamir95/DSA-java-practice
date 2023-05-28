@@ -1,5 +1,7 @@
 package Algos.Merge_sorted_array;
 
+//Leetcode: https://leetcode.com/problems/merge-sorted-array/?envType=study-plan-v2&id=top-interview-150
+
 public class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int smallest_arr_size = Math.min(m, n);
@@ -29,6 +31,8 @@ public class Solution {
         }
 
         //copy from temp to num1
+        //System.arraycopy is a faster operation, because it take advantage of low level platform specific instructions
+        //Moreover, it is able to move data in bulk
         System.arraycopy(temp_arr ,0,nums1, 0, temp_arr.length);
     }
 }

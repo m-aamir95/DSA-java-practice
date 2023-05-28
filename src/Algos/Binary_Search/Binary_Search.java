@@ -1,4 +1,4 @@
-package Algos;
+package Algos.Binary_Search;
 
 public class Binary_Search {
 
