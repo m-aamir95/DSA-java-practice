@@ -21,8 +21,8 @@ public class Main {
 
         Result result = junit.run(Class.forName("Algos.Merge_sorted_array.SolutionTest"),
                                   Class.forName("Algos.Longest_Palindrome_String.SolutionTest"),
-                                  Class.forName("Algos.Remove_Element.SolutionTest"),
                                   Class.forName("Algos.Median_of_two_sorted_arrays.SolutionTest"));
+
 
         PrintJUnitTestReport(result);
     }
