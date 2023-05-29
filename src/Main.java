@@ -19,7 +19,8 @@ public class Main {
         JUnitCore junit = new JUnitCore();
         junit.addListener(new TextListener(System.out));
 
-        Result result = junit.run(Class.forName("Algos.Merge_sorted_array.SolutionTest"));
+        Result result = junit.run(Class.forName("Algos.Merge_sorted_array.SolutionTest"),
+                                  Class.forName("Algos.Longest_Palindrome_String.SolutionTest"));
 
         PrintJUnitTestReport(result);
     }
