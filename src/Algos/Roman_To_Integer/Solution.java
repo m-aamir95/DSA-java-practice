@@ -1,41 +1,45 @@
 package Algos.Roman_To_Integer;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
     public int romanToInt(String s) {
         int y = 0;
         int len = s.length();
+
+        Map<String, Integer> roman_to_int =  new HashMap<>();
+        roman_to_int.put("I", 1);
+        roman_to_int.put("V", 5);
+        roman_to_int.put("X", 10);
+        roman_to_int.put("L", 50);
+        roman_to_int.put("C", 100);
+        roman_to_int.put("D", 500);
+        roman_to_int.put("M", 1000);
+        roman_to_int.put("IV", 4);
+        roman_to_int.put("IX", 9);
+        roman_to_int.put("XL", 40);
+        roman_to_int.put("XC", 90);
+        roman_to_int.put("CD", 400);
+        roman_to_int.put("CM", 900);
+
         for(int i=0; i< len; i++){
-            char c = s.charAt(i);
-            if(c == 'V') y += 5;
-            else if(c == 'L')  y += 50;
-            else if(c == 'D')  y += 500;
-            else if(c == 'M')  y += 1000;
-            else{ //Special cases for I, X, C because they can occur in combinations with others
 
-                String char_pair = "";
-                if(i+1 < len){
-                    char_pair = new StringBuilder().append(s.charAt(i)).append(s.charAt(i+1)).toString();
-                }
+            StringBuilder to_compare =  new StringBuilder();
+            to_compare.append(s.charAt(i));
 
-                if (c =='I'){
-                    if (i+1 < len && char_pair.equals("IV")) {y += 4; i++;}
-                    else if (i+1 < len && char_pair.equals("IX")) {y += 9; i++;}
-                    else y += 1;
-                }
+            y += roman_to_int.get(to_compare.toString());
 
-                else if (c =='X'){
-                    if (i+1 < len && char_pair.equals("XL")) {y += 40; i++;}
-                    else if (i+1 < len && char_pair.equals("XC")) {y += 90; i++;}
-                    else y += 10;
-                }
-
-
-                else if (c =='C'){
-                    if (i+1 < len && char_pair.equals("CD")) {y += 400; i++;}
-                    else if (i+1 < len && char_pair.equals("CM")) {y += 900; i++;}
-                    else y += 100;
+            if(i+1 < len){
+                to_compare.append(s.charAt(i+1));
+                String pair = to_compare.toString();
+                if (roman_to_int.containsKey(pair)){
+                    i++; //because we are considering two characters instead of the regular one
+                    y -= roman_to_int.get(pair.substring(0,1)); //Remove the single digit
+                    y += roman_to_int.get(pair);
                 }
             }
+
 
         }
         return y;
