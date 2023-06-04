@@ -23,7 +23,8 @@ public class Main {
                                   Class.forName("Algos.Longest_Palindrome_String.SolutionTest"),
                                   Class.forName("Algos.Median_of_two_sorted_arrays.SolutionTest"),
                                   Class.forName("Algos.Reverse_Integer.SolutionTest"),
-                                  Class.forName("Algos.String_to_Integer_atoi.SolutionTest"));
+                                  Class.forName("Algos.String_to_Integer_atoi.SolutionTest"),
+                                  Class.forName("Algos.container_with_most_water.SolutionTest"));
 
 
         PrintJUnitTestReport(result);
