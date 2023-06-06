@@ -8,7 +8,7 @@ class Solution {
             int s = numbers[left] + numbers[right];
             if(s == target) return new int[]{left+1, right+1};
             else if(s > target) right--;
-            else left--;
+            else left++;
 
         }
         return new int[]{0,0};
