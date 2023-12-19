@@ -1,3 +1,5 @@
+package Algos.smooth_image;
+
 class Solution {
     public int[][] imageSmoother(int[][] img) {
 
